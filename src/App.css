@@ -6,6 +6,33 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* Card */
+.draggable-card {
+  position: absolute;
+  width: 240px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  user-select: none;
+  z-index: 10;
+}
+
+.draggable-card:active {
+  cursor: grabbing;
+}
+
+.drag-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import DraggableCard from './DraggableCards';
+
+const cardData = [
+  { id: 1, title: "Card One", content: "My Card.", position: { x: 50, y: 100 } },
+  { id: 2, title: "Card Two", content: "Mr Azeez card.", position: { x: 300, y: 150 } },
+  { id: 3, title: "Card Three", content: "Madame Funmi's card.", position: { x: 550, y: 200 } },
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {cardData?.map((card) => (
+        <DraggableCard
+          key={card?.id}
+          initialPosition={card?.position}
+          title={card?.title}
+          content={card?.content}
+        />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
